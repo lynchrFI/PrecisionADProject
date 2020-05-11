@@ -1,5 +1,5 @@
 <p> <% @clients.each do |client| %>
-  <%= client.info %>
+  <%= client.client_info %>
 
 <form method="post" action="/clients/<%=client.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">

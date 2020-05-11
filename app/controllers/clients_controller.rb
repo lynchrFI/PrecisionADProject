@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
     get '/clients' do
         if logged_in?
-            @clients = Client.all
+            @clients = current_user.clients
             erb :"clients/index"
         else
             redirect '/login'
@@ -40,9 +40,12 @@ class ClientsController < ApplicationController
 
     get '/clients/:id' do
         if logged_in?
-          binding.pry
           @client = Client.find_by_id(params[:id])
-          erb :'clients/show'
+          if @client.user == current_user
+            erb :'clients/show'
+          else
+            redirect to '/clients'
+          end
         else
           redirect to '/login'
         end

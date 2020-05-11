@@ -1,8 +1,10 @@
 <p> Welcome, <%= current_user.username %>
-<h2> Clients </h2>
+<h2> Client </h2>
 
-<% @client.each do |client| %>
+
   <div>
-    <%= client.info %>
+    <%= @client.name %><br/>
+    <%= @client.number %><br/>
+    <%= @client.vehicle %><br/>
+    <%= @client.client_info %><br/>
   </div>
-<% end %>
