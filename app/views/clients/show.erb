@@ -1,0 +1,8 @@
+<p> Welcome, <%= current_user.username %>
+<h2> Clients </h2>
+
+<% @client.each do |client| %>
+  <div>
+    <%= client.info %>
+  </div>
+<% end %>

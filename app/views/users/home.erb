@@ -1,0 +1,6 @@
+<p> Here are your clients, <%= @user.username %>
+<% @user.clients.each do |client| %>
+  <div>
+    <%= client.info %>
+  </div>
+<% end %>

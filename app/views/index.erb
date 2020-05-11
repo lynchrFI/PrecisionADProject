@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Precision Auto Detail - Flatiron Project.</h2>
+
+    <div class="content">
+      <p>Welcome to Cient Tracker by Precision Auto Detail! If you're new here, please <a href="/signup">sign up</a>! Or <a href="/login">login</a> if you already have an account 
+      registered with us. This app is currently in beta and if you would like more information please head to <a href="https://github.com/lynchrFI/PrecisionADProject">README</a>.</p>
+    <a href="/logout">Logout</a>
+    </div>
+    
+
+    <div class="sidebar">
+      <h3>Environment</h3>
+      <ul>
+        <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+        <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+        <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+        <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
