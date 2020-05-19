@@ -71,7 +71,11 @@ class ClientsController < ApplicationController
           else
             @client = Client.find_by_id(params[:id])
             if @client && @client.user == current_user
-              if @client.update(client_info: params[:client_info])
+              if @client.update(
+                client_info: params[:client_info],
+                name: params[:name], 
+                number: params[:number],
+                vehicle: params[:vehicle])
                 redirect to "/clients/#{@client.id}"
               else
                 redirect to "/clients/#{@client.id}/edit"
