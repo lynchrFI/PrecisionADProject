@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    get '/clients' do
+    get '/products' do
         if logged_in?
             @products = current_user.products
             erb :"products/index"
@@ -7,6 +7,12 @@ class ProductsController < ApplicationController
             redirect '/login'
         end
     end
-    
+    get '/products/new' do
+        if logged_in?
+            erb :'products/create'
+        else 
+            redirect '/login'
+        end
+    end
   
 end
