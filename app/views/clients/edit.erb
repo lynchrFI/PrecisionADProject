@@ -2,6 +2,9 @@
 
 <form method="post" action="/clients/<%=@client.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="" value="<%= @client.info %>">
+  <input type="text" name="Name:" value="<%= @client.name %>"><br/>
+  <input type="text" name="Phone Number:" value="<%= @client.number %>"><br/>
+  <input type="text" name="Vehicle:" value="<%= @client.vehicle%>"><br/>
+  <input type="text" name="Client Info:" value="<%= @client.client_info %>"><br/>
   <input type="submit" value="submit">
 </form>

@@ -66,12 +66,12 @@ class ClientsController < ApplicationController
     
       patch '/clients/:id' do
         if logged_in?
-          if params[:info] == ""
+          if params[:client_info] == ""
             redirect to "/clients/#{params[:id]}/edit"
           else
             @client = Client.find_by_id(params[:id])
             if @client && @client.user == current_user
-              if @client.update(info: params[:info])
+              if @client.update(client_info: params[:client_info])
                 redirect to "/clients/#{@client.id}"
               else
                 redirect to "/clients/#{@client.id}/edit"
